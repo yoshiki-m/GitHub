@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { VFC } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
@@ -9,7 +10,7 @@ interface MainProps {
   title: string;
 }
 
-export default function Main(props: MainProps) {
+const Main: VFC<MainProps> = (props) => {
   const { posts, title } = props;
 
   return (
@@ -34,4 +35,6 @@ export default function Main(props: MainProps) {
       ))}
     </Grid>
   );
-}
+};
+
+export default Main;

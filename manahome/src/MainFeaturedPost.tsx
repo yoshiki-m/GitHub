@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { VFC } from 'react';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
@@ -15,7 +16,7 @@ interface MainFeaturedPostProps {
   };
 }
 
-export default function MainFeaturedPost(props: MainFeaturedPostProps) {
+const MainFeaturedPost: VFC<MainFeaturedPostProps> = (props) => {
   const { post } = props;
 
   return (
@@ -32,13 +33,7 @@ export default function MainFeaturedPost(props: MainFeaturedPostProps) {
       }}
     >
       {/* Increase the priority of the hero background image */}
-      {
-        <img
-          style={{ display: 'none' }}
-          src={post.image}
-          alt={post.imageText}
-        />
-      }
+      <img style={{ display: 'none' }} src={post.image} alt={post.imageText} />
       <Box
         sx={{
           position: 'absolute',
@@ -69,7 +64,7 @@ export default function MainFeaturedPost(props: MainFeaturedPostProps) {
             <Typography variant="h5" color="inherit" paragraph>
               {post.description}
             </Typography>
-            <Link variant="subtitle1" href="#">
+            <Link variant="subtitle1" href="/#">
               {post.linkText}
             </Link>
           </Box>
@@ -77,4 +72,6 @@ export default function MainFeaturedPost(props: MainFeaturedPostProps) {
       </Grid>
     </Paper>
   );
-}
+};
+
+export default MainFeaturedPost;

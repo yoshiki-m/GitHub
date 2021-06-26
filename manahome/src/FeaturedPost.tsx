@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { VFC } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -16,7 +17,10 @@ interface FeaturedPostProps {
   };
 }
 
-export default function FeaturedPost(props: FeaturedPostProps) {
+// export default function FeaturedPost(props: FeaturedPostProps) {
+//   const { post } = props;
+
+const FeaturedPost: VFC<FeaturedPostProps> = (props) => {
   const { post } = props;
 
   return (
@@ -46,4 +50,6 @@ export default function FeaturedPost(props: FeaturedPostProps) {
       </CardActionArea>
     </Grid>
   );
-}
+};
+
+export default FeaturedPost;

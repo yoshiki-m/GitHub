@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { VFC } from 'react';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
@@ -14,11 +15,11 @@ interface HeaderProps {
   title: string;
 }
 
-export default function Header(props: HeaderProps) {
+const Header: VFC<HeaderProps> = (props) => {
   const { sections, title } = props;
 
   return (
-    <React.Fragment>
+    <>
       <Toolbar sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Button size="small">Subscribe</Button>
         <Typography
@@ -56,6 +57,8 @@ export default function Header(props: HeaderProps) {
           </Link>
         ))}
       </Toolbar>
-    </React.Fragment>
+    </>
   );
-}
+};
+
+export default Header;

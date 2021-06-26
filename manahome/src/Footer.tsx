@@ -1,28 +1,26 @@
 import * as React from 'react';
+import { VFC } from 'react';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+const Copyright: VFC = () => (
+  <Typography variant="body2" color="text.secondary" align="center">
+    {'Copyright © '}
+    <Link color="inherit" href="https://material-ui.com/">
+      Your Website
+    </Link>{' '}
+    {new Date().getFullYear()}.
+  </Typography>
+);
 
 interface FooterProps {
   description: string;
   title: string;
 }
 
-export default function Footer(props: FooterProps) {
+const Footer: VFC<FooterProps> = (props) => {
   const { description, title } = props;
 
   return (
@@ -43,4 +41,6 @@ export default function Footer(props: FooterProps) {
       </Container>
     </Box>
   );
-}
+};
+
+export default Footer;
