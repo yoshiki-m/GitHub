@@ -1,6 +1,8 @@
 import * as React from 'react';
+import { VFC } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Stack from '@material-ui/core/Stack';
+// import { Stack } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
@@ -18,7 +20,8 @@ interface SidebarProps {
   title: string;
 }
 
-export default function Sidebar(props: SidebarProps) {
+// export default function Sidebar(props: SidebarProps) {
+const Sidebar: VFC<SidebarProps> = (props) => {
   const { archives, description, social, title } = props;
 
   return (
@@ -49,7 +52,7 @@ export default function Sidebar(props: SidebarProps) {
         <Link
           display="block"
           variant="body1"
-          href="#"
+          href="/#"
           key={network.name}
           sx={{ mb: 0.5 }}
         >
@@ -61,4 +64,6 @@ export default function Sidebar(props: SidebarProps) {
       ))}
     </Grid>
   );
-}
+};
+
+export default Sidebar;

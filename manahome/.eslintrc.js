@@ -114,10 +114,17 @@ module.exports = {
     },
   ],
   settings: {
-    'import/resolver': {
-      node: {
-        paths: ['src'],
-      },
-    },
+    "mport/resiolver": [
+      "webpack",
+      {node: {
+          paths: ['src'],
+        }
+      }
+    ]
+    // 'import/resolver': {
+    //   node: {
+    //     paths: ['src'],
+    //   },
+    // },
   },
 };
